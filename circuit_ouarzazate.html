@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.82.0">
+    <title>VTT Racing Morocco 2021 · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/leaflet.css" rel="stylesheet">
+
+
+    <style>
+      #mapid { height: 480px; }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- MOUAD GRAICH -->
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">VTT Racing</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="index.html">
+              <span data-feather="home"></span>
+              Acceuil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="circuit_ourika.html">
+              <span data-feather="file"></span>
+              Circuit Ourika
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="circuit_amizmiz.html">
+              <span data-feather="shopping-cart"></span>
+              Circuit Amizmiz
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="circuit_ouarzazate.html">
+              <span data-feather="users"></span>
+              Circuit Ouarzazate
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="circuit_aoulouz.html">
+              <span data-feather="bar-chart-2"></span>
+              Circuit Aoulouz
+            </a> 
+          </li>
+        </ul>
+
+      
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Circuit Ouarzazate</h1>
+       
+      </div>
+
+      <div id="mapid"></div>
+    
+      
+    </main>
+  </div>
+</div>
+   
+       <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/leaflet.js"></script>
+
+    <script type="">
+      var mymap = L.map('mapid').setView([30.9355177,-6.9676089], 13);
+
+          L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoibWRnciIsImEiOiJja29iczB1bnYwajcxMnhvZHJybjIxMTV0In0.bTbhKC7oAa_cqda-j-6pnA'
+     }).addTo(mymap);
+
+          L.marker([30.94578463806548, -6.957645113624071]).addTo(mymap)
+    .bindPopup('Point  de départ.<br> Ouarzazate.')
+    .openPopup();
+   
+   L.marker([30.926320188994502, -6.932926598237088]).addTo(mymap)
+    .bindPopup('Point Final.<br> Ouarzazate  4,3 KM.')
+    .openPopup();
+
+    var latlngs = [
+    [30.94578463806548, -6.957645113624071],
+    [30.944598959825907, -6.9564234067293995],
+    [30.944428511059296, -6.956074511828899],
+    [30.944426048961564, -6.955791220715985],
+    [30.943697335089066, -6.949847188929041],
+    [30.943113286276997, -6.945031333475135],
+    [30.941384910625104, -6.941432900836058],
+    [30.941321792481954, -6.941334540589038],
+    [30.936609640797077, -6.931712144805898],
+    [30.93638012905174, -6.931207569080413],
+    [30.93480736063598, -6.927862261288793],
+    [30.934481292394874, -6.926558724530228],
+    [30.934351872274664, -6.926345306132973],
+    [30.932252917517417, -6.924184368842082],
+    [30.931511769686786, -6.925955517455257],
+    [30.928531171720717, -6.924453515374354],
+    [30.92599712814224, -6.930979635596655],
+    [30.926887066717978, -6.931498351996163],
+    [30.926320188994502, -6.932926598237088]
+    ];
+
+    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(mymap);
+mymap.fitBounds(polyline.getBounds());
+
+    </script>
+
+
+  </body>
+</html>
